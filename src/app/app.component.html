@@ -1,3 +1,29 @@
 <h1> Hello team !</h1>
 <h2>Welcome to our store!</h2>
 <a routerLink="/products">View Products</a>
+<div class="form-group">
+<input type="text" class="form control" placeholder="search here" [(ngModel)]="searchTerm" (keyup)="Search($event)"> 
+</div>
+
+<!-- <input type="text" class="form-control" id="filter-text-box" [(ngModel)]="searchtext" 
+placeholder=" enter your text here" (ngModelChange)="onFilterBoxChnaged()" style="width : 400ox";> -->
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Price</th>
+        <!-- <th>Category</th> -->
+        <!-- <th>Descrption</th> -->
+        <th>image</th>
+    </tr>
+    
+    <tr *ngFor="let comments of listcomments"> 
+        <td>{{comments.id}}</td>
+        <td>{{comments.title}}</td>
+        <td>{{comments.price}}</td>
+        <!-- <td>{{comments.category}}</td> -->
+        <!-- <td>{{comments.description}}</td> -->
+        <!-- <td>{{comments.image}}</td> -->
+        <td><img src="{{ comments.image }}"/></td>
+    </tr>
+</table>
